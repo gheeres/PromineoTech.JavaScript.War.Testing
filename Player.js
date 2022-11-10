@@ -17,7 +17,7 @@ const Deck = require('./Deck');
 
 describe('Player', () => {
   describe('#constructor', () => {
-    //it ('with empty constructor will throw Error', () => {
+    //it ('with empty constructor will throw Error', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -26,7 +26,7 @@ describe('Player', () => {
     //   assert.fail('Not implemented');
     //});
 
-    // it ('with name sets name property', () => {
+    // it ('with name sets name property', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -35,7 +35,7 @@ describe('Player', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with cards will initialize hand', () => {
+    // it ('with cards will initialize hand', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -45,7 +45,7 @@ describe('Player', () => {
     // });
   });
   describe('#flip', () => {
-    // it ('with empty hand should return null', () => {
+    // it ('with empty hand should return null', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -54,7 +54,7 @@ describe('Player', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('should return first card from the players hand', () => {
+    // it ('should return first card from the players hand', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -63,7 +63,7 @@ describe('Player', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('should remove card from players hand', () => {
+    // it ('should remove card from players hand', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -73,7 +73,7 @@ describe('Player', () => {
     // });
   });
   describe('#add', () => {
-    // it ('with null card returns existing hand count', () => {
+    // it ('with null card returns existing hand count', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -82,7 +82,7 @@ describe('Player', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with valid card adds card to hand', () => {
+    // it ('with valid card adds card to hand', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -91,7 +91,7 @@ describe('Player', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with empty hand adds card to hand', () => {
+    // it ('with empty hand adds card to hand', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -99,7 +99,7 @@ describe('Player', () => {
     //   /* Assert */
     //   assert.fail('Not implemented');
     // });
-    // it ('with non-Card object/instance doesnt add card to hand', () => {
+    // it ('with non-Card object/instance doesnt add card to hand', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -109,7 +109,7 @@ describe('Player', () => {
     // });
   });
   describe('#drawCardFromDeck', () => {
-    // it ('with empty deck returns false', () => {
+    // it ('with empty deck returns false', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -118,7 +118,7 @@ describe('Player', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with non-Deck object/instance returns false', () => {
+    // it ('with non-Deck object/instance returns false', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -127,7 +127,7 @@ describe('Player', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with valid deck and empty hand adds drawn card to players hand', () => {
+    // it ('with valid deck and empty hand adds drawn card to players hand', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -136,7 +136,7 @@ describe('Player', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with valid deck and existing hand adds drawn card to players hand', () => {
+    // it ('with valid deck and existing hand adds drawn card to players hand', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */

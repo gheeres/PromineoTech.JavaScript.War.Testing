@@ -17,7 +17,7 @@ const Faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'
 
 describe('Card', () => {
   describe('#constructor', () => {
-    //it ('should take a suit and value', () => {
+    //it ('should take a suit and value', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -26,7 +26,7 @@ describe('Card', () => {
     //   assert.fail('Not implemented');
     //});
 
-    // it ('should throw Error if no parameters provided', () => {
+    // it ('should throw Error if no parameters provided', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -34,7 +34,7 @@ describe('Card', () => {
     //   /* Assert */
     // });
 
-    // it ('should throw Error if suit is not valid', () => {
+    // it ('should throw Error if suit is not valid', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -42,7 +42,7 @@ describe('Card', () => {
     //   /* Assert */
     // });
 
-    // it ('should throw Error if face is not valid', () => {
+    // it ('should throw Error if face is not valid', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -51,7 +51,7 @@ describe('Card', () => {
     // });
   });
   describe('#toString', () => {
-    // it ('should return suit and card face', () => {
+    // it ('should return suit and card face', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -60,7 +60,7 @@ describe('Card', () => {
     // });
   });
   describe('#getValue', () => {
-    // it ('with ♠A should return 1', () => {
+    // it ('with ♠A should return 1', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -68,7 +68,7 @@ describe('Card', () => {
     //   /* Assert */
     // });
 
-    // it ('with ♠Q should return 10', () => {
+    // it ('with ♠Q should return 10', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -76,7 +76,7 @@ describe('Card', () => {
     //   /* Assert */
     // });
 
-    // it ('with ♠K should return 10', () => {
+    // it ('with ♠K should return 10', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -84,7 +84,7 @@ describe('Card', () => {
     //   /* Assert */
     // });
 
-    // it ('with ♠10 should return 10', () => {
+    // it ('with ♠10 should return 10', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -92,7 +92,7 @@ describe('Card', () => {
     //   /* Assert */
     // });
 
-    // it ('with ♠2 should return 2', () => {
+    // it ('with ♠2 should return 2', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -100,7 +100,7 @@ describe('Card', () => {
     //   /* Assert */
     // });
 
-    // it ('with ♠7 should return 7', () => {
+    // it ('with ♠7 should return 7', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */

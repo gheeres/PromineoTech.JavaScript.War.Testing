@@ -6,7 +6,7 @@ const expect = chai.expect;
 
 describe('Suits', () => {
   describe('#array', () => {
-    //it('should contain four values', () => {
+    //it('should contain four values', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -14,7 +14,7 @@ describe('Suits', () => {
     //   /* Assert */
     //});
 
-    // it('should contain "♠"', () => {
+    // it('should contain "♠"', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -22,7 +22,7 @@ describe('Suits', () => {
     //   /* Assert */
     // });
 
-    // it('should contain "♥"', () => {
+    // it('should contain "♥"', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -30,7 +30,7 @@ describe('Suits', () => {
     //   /* Assert */
     // });
 
-    // it('should contain "♣"', () => {
+    // it('should contain "♣"', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -38,7 +38,7 @@ describe('Suits', () => {
     //   /* Assert */
     // });
 
-    // it('should contain "♦"', () => {
+    // it('should contain "♦"', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */

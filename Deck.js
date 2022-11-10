@@ -17,7 +17,7 @@ const Card = require('./Card').Card;
 
 describe('Deck', () => {
   describe('#constructor', () => {
-    //it ('with empty constructor will create a deck with 52 cards', () => {
+    //it ('with empty constructor will create a deck with 52 cards', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -26,7 +26,7 @@ describe('Deck', () => {
     //   assert.fail('Not implemented');
     //});
 
-    // it ('with empty constructor should initialize a standard deck', () => {
+    // it ('with empty constructor should initialize a standard deck', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -35,7 +35,7 @@ describe('Deck', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with array of cards, should initialize cards to provided values', () => {
+    // it ('with array of cards, should initialize cards to provided values', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -45,7 +45,7 @@ describe('Deck', () => {
     // });
   });
   describe('#shuffle', () => {
-    // it ('with empty deck should not throw error', () => {
+    // it ('with empty deck should not throw error', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -54,7 +54,7 @@ describe('Deck', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with one card should remain unshuffled', () => {
+    // it ('with one card should remain unshuffled', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -63,7 +63,7 @@ describe('Deck', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('should not remove or alter any existing cards in the deck', () => {
+    // it ('should not remove or alter any existing cards in the deck', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -72,7 +72,7 @@ describe('Deck', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with multiple cards should change position of at least one card', () => {
+    // it ('with multiple cards should change position of at least one card', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -82,7 +82,7 @@ describe('Deck', () => {
     // });
   });
   describe('#draw', () => {
-    // it ('with empty deck should return null', () => {
+    // it ('with empty deck should return null', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -91,7 +91,7 @@ describe('Deck', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('should return card at the top of the deck', () => {
+    // it ('should return card at the top of the deck', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
@@ -100,7 +100,7 @@ describe('Deck', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('should remove card from deck', () => {
+    // it ('should remove card from deck', (done) => {
     //   /* Arrange */
     //
     //   /* Act / Invoke */
