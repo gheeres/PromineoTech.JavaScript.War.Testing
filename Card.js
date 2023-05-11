@@ -140,7 +140,7 @@ class Card {
   }
 }
 
-exports.module = {
+module.exports = {
   Card : Card,
   Faces : Faces
 };
