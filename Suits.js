@@ -2,52 +2,41 @@ const chai = require("chai");
 const assert = chai.assert;
 const expect = chai.expect;
 
-// Suits = ACE, DIAMOND, SPADE, HEART
-
 describe('Suits', () => {
   describe('#array', () => {
-    //it('should contain four values', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    //});
+    it('should contain four values', (done) => {
+      expect(Suits.length).to.equal(4);
 
-    // it('should contain "♠"', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+      done();
+    });
+    it('should contain "♠"', (done) => {
+      let expectedSuit = '♠';
+      expect(Suits).to.contain(expectedSuit);
 
-    // it('should contain "♥"', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+      done();
+    });
+    it('should contain "♥"', (done) => {
+      let expectedSuit = '♥';
+      expect(Suits).to.contain(expectedSuit);
 
-    // it('should contain "♣"', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+      done();
+    });
+    it('should contain "♣"', (done) => {
+      let expectedSuit = '♣';
+      expect(Suits).to.contain(expectedSuit);
 
-    // it('should contain "♦"', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+      done();
+    });
+    it('should contain "♦"', (done) => {
+      let expectedSuit = '♦';
+      expect(Suits).to.contain(expectedSuit);
+
+      done();
+    });
   });
 });
 
-const Suits = undefined;
+const Suits = [ '♠', '♥', '♣', '♦' ];
+//const Suits = ['\u2666', '\u2665', '\u2666', '\u2663'];
 
 module.exports = Suits;
