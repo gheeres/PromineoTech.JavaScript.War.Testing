@@ -1,7 +1,7 @@
 const chai = require("chai");
 const assert = chai.assert;
 const expect = chai.expect;
-const Card = require('./Card');
+const Card = require('./Card').Card;
 const Deck = require('./Deck');
 
 // Player {
