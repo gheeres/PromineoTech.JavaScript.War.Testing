@@ -17,96 +17,152 @@ const Faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'
 
 describe('Card', () => {
   describe('#constructor', () => {
-    //it ('should take a suit and value', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    //   assert.fail('Not implemented');
-    //});
+    it ('should take a suit and value', (done) => {
+       /* Arrange */
+    
+       /* Act / Invoke */
+       let card = new Card('♠', 'A');
+    
+       /* Assert */
+       expect(card.suit).to.equal('♠');
+       expect(card.face).to.equal('A');
 
-    // it ('should throw Error if no parameters provided', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+       done();
+    });
 
-    // it ('should throw Error if suit is not valid', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+    it ('should throw Error if no parameters provided', (done) => {
+       expect(() => {
+         let card = new Card();
+       }).to.throw(Error);
+       done();
+    });
 
-    // it ('should throw Error if face is not valid', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+    it ('should throw Error if suit is not valid', (done) => {
+      expect(() => {
+        let card = new Card('o', 'A');
+      }).to.throw(Error);
+      done();
+    });
+
+    it ('should throw Error if face is not valid', (done) => {
+      expect(() => {
+        let card = new Card('♠', 'B');
+      }).to.throw(Error);
+      done();
+    });
   });
+
   describe('#toString', () => {
-    // it ('should return suit and card face', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+    it ('should return suit and card face', (done) => {
+       /* Arrange */
+       let suit = Suits[0];
+       let face = 'A';
+       let expectedString = suit + face;
+    
+       /* Act / Invoke */
+       let card = new Card(suit, face);
+    
+       /* Assert */
+       expect(card.toString()).to.equal(expectedString);
+       
+       done();
+    });
   });
   describe('#getValue', () => {
-    // it ('with ♠A should return 1', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+    it ('with ♠A should return 1', (done) => {
+      /* Arrange */
+      let suit = Suits[0];
+      let face = 'A';
+      let expectedValue = 1;
+      let card = new Card(suit, face);
+    
+      /* Act / Invoke */
+      let result = card.getValue();
+    
+       /* Assert */
+       expect(result).to.equal(expectedValue);
+       
+       done();
+    });
 
-    // it ('with ♠Q should return 10', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+    it ('with ♠Q should return 10', (done) => {
+      /* Arrange */
+      let suit = Suits[0];
+      let face = 'Q';
+      let expectedValue = 10;
+      let card = new Card(suit, face);
+    
+      /* Act / Invoke */
+      let result = card.getValue();
+    
+       /* Assert */
+       expect(result).to.equal(expectedValue);
 
-    // it ('with ♠K should return 10', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+       done();
+     });
 
-    // it ('with ♠10 should return 10', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+    it ('with ♠K should return 10', (done) => {
+      /* Arrange */
+      let suit = Suits[0];
+      let face = 'K';
+      let expectedValue = 10;
+      let card = new Card(suit, face);
+    
+      /* Act / Invoke */
+      let result = card.getValue();
+    
+       /* Assert */
+       expect(result).to.equal(expectedValue);
 
-    // it ('with ♠2 should return 2', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+       done();    });
 
-    // it ('with ♠7 should return 7', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    // });
+    it ('with ♠10 should return 10', (done) => {
+      /* Arrange */
+      let suit = Suits[0];
+      let face = '10';
+      let expectedValue = 10;
+      let card = new Card(suit, face);
+    
+      /* Act / Invoke */
+      let result = card.getValue();
+    
+       /* Assert */
+       expect(result).to.equal(expectedValue);
+
+       done();    
+    });
+
+    it ('with ♠2 should return 2', (done) => {
+      /* Arrange */
+      let suit = Suits[0];
+      let face = '2';
+      let expectedValue = 2;
+      let card = new Card(suit, face);
+    
+      /* Act / Invoke */
+      let result = card.getValue();
+    
+       /* Assert */
+       expect(result).to.equal(expectedValue);
+
+       done();
+    });
+
+    it ('with ♠7 should return 7', (done) => {
+      /* Arrange */
+      let suit = Suits[0];
+      let face = '7';
+      let expectedValue = 7;
+      let card = new Card(suit, face);
+    
+      /* Act / Invoke */
+      let result = card.getValue();
+    
+       /* Assert */
+       expect(result).to.equal(expectedValue);
+
+       done();
+    });
   });
 });
 
@@ -120,7 +176,14 @@ class Card {
    * @param {String} face The face or value of the card. Accepted values: 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'
    */
   constructor(suit, face) {
-    /* code here */
+    if (Suits.indexOf(suit) < 0) {
+      throw new Error(`Invalid suit specified. Valid values are: ${ Suits.join(',') }`);
+    }
+    if (Faces.indexOf(face) < 0) {
+      throw new Error(`Invalid face specified. Valid values are: ${ Faces.join(',') }`);
+    }
+    this.suit = suit;
+    this.face = face;
   }
 
   /**
@@ -128,7 +191,19 @@ class Card {
    * @returns The value of the specified card.
    */
   getValue() {
-    /* code here */
+    switch(this.face) {
+      case 'A': return 1;
+      case 'K':
+      case 'Q': 
+      case 'J': return 10;
+
+      default: 
+        let value = parseInt(this.face, 10);
+        if (value) {
+          return value;
+        }
+        return 0;
+    }
   }
 
   /**
@@ -136,7 +211,7 @@ class Card {
    * @returns {String} The string representation of the object
    */
   toString() {
-    /* code here */
+    return `${ this.suit }${ this.face }`;
   }
 }
 
