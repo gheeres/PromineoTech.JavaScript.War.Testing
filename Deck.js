@@ -17,23 +17,41 @@ const Card = require('./Card').Card;
 
 describe('Deck', () => {
   describe('#constructor', () => {
-    //it ('with empty constructor will create a deck with 52 cards', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    //   assert.fail('Not implemented');
-    //});
+    it ('with empty constructor will create a deck with 52 cards', () => {
+      /* Arrange */
+      let expectedCards = 52;
+      
+      /* Act / Invoke */
+      let deck = new Deck();
+    
+      /* Assert */
+      expect(deck.peek()).to.have.lengthOf(expectedCards)
+    });
 
-    // it ('with empty constructor should initialize a standard deck', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    //   assert.fail('Not implemented');
-    // });
+    it ('with empty constructor should initialize a standard deck', () => {
+      /* Arrange */
+      let expectedCards = [
+        new Card('♠', 'A'), new Card('♠', '2'), new Card('♠', '3'), new Card('♠', '4'), new Card('♠', '5'), 
+        new Card('♠', '6'), new Card('♠', '7'), new Card('♠', '8'), new Card('♠', '9'), new Card('♠', '10'), 
+        new Card('♠', 'J'), new Card('♠', 'Q'), new Card('♠', 'K'),
+        new Card('♥', 'A'), new Card('♥', '2'), new Card('♥', '3'), new Card('♥', '4'), new Card('♥', '5'), 
+        new Card('♥', '6'), new Card('♥', '7'), new Card('♥', '8'), new Card('♥', '9'), new Card('♥', '10'), 
+        new Card('♥', 'J'), new Card('♥', 'Q'), new Card('♥', 'K'),
+        new Card('♣', 'A'), new Card('♣', '2'), new Card('♣', '3'), new Card('♣', '4'), new Card('♣', '5'), 
+        new Card('♣', '6'), new Card('♣', '7'), new Card('♣', '8'), new Card('♣', '9'), new Card('♣', '10'), 
+        new Card('♣', 'J'), new Card('♣', 'Q'), new Card('♣', 'K'),
+        new Card('♦', 'A'), new Card('♦', '2'), new Card('♦', '3'), new Card('♦', '4'), new Card('♦', '5'), 
+        new Card('♦', '6'), new Card('♦', '7'), new Card('♦', '8'), new Card('♦', '9'), new Card('♦', '10'), 
+        new Card('♦', 'J'), new Card('♦', 'Q'), new Card('♦', 'K'),
+      ];
+    
+      /* Act / Invoke */
+      let deck = new Deck();
+    
+      /* Assert */
+      expect(deck.peek()).to.have.lengthOf(expectedCards.length);
+      expect(deck.peek()).to.have.deep.members(expectedCards);
+    });
 
     // it ('with array of cards, should initialize cards to provided values', (done) => {
     //   /* Arrange */
@@ -72,14 +90,26 @@ describe('Deck', () => {
     //   assert.fail('Not implemented');
     // });
 
-    // it ('with multiple cards should change position of at least one card', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    //   assert.fail('Not implemented');
-    // });
+    it ('with multiple cards should change position of at least one card', () => {
+      /* Arrange */
+      let deck = new Deck();
+      let originalDeck = deck.peek();
+    
+      /* Act / Invoke */
+      deck.shuffle();
+    
+      /* Assert */
+      let changedPosition = false;
+      deck.peek().forEach((card,index) => {
+        let originalCard = originalDeck[index];
+        if ((card.suit !== originalCard.suit) ||
+            (card.face !== originalCard.face)) {
+          changedPosition = true;
+          return;
+        }
+      });
+      expect(changedPosition).to.be.true;
+    });
   });
   describe('#draw', () => {
     // it ('with empty deck should return null', (done) => {
@@ -119,13 +149,14 @@ class Deck {
    * The cards contained in the deck.
    */
   // code here, declare private variable. no one should be able to peek at the deck? cheater!
+  #cards;
 
   /**
    * Creates a new instance of Desk.
    * @param {Card[]} cards The optional list of cards to initialize the deck with. Leaving this parameter null will automatically create a standard 52 card desk.
    */
   constructor(cards) {
-    /* code here */
+    this.#cards = this.#create();
   }
 
   /**
@@ -133,14 +164,48 @@ class Deck {
    * @returns {Card[]} The freshly unwrapped deck
    */
   #create() {
-    /* code here */
+    // return [
+    //   new Card('♠', 'A'), new Card('♠', '2'), new Card('♠', '3'), new Card('♠', '4'), new Card('♠', '5'), 
+    //   new Card('♠', '6'), new Card('♠', '7'), new Card('♠', '8'), new Card('♠', '9'), new Card('♠', '10'), 
+    //   new Card('♠', 'J'), new Card('♠', 'Q'), new Card('♠', 'K'),
+    //   new Card('♥', 'A'), new Card('♥', '2'), new Card('♥', '3'), new Card('♥', '4'), new Card('♥', '5'), 
+    //   new Card('♥', '6'), new Card('♥', '7'), new Card('♥', '8'), new Card('♥', '9'), new Card('♥', '10'), 
+    //   new Card('♥', 'J'), new Card('♥', 'Q'), new Card('♥', 'K'),
+    //   new Card('♣', 'A'), new Card('♣', '2'), new Card('♣', '3'), new Card('♣', '4'), new Card('♣', '5'), 
+    //   new Card('♣', '6'), new Card('♣', '7'), new Card('♣', '8'), new Card('♣', '9'), new Card('♣', '10'), 
+    //   new Card('♣', 'J'), new Card('♣', 'Q'), new Card('♣', 'K'),
+    //   new Card('♦', 'A'), new Card('♦', '2'), new Card('♦', '3'), new Card('♦', '4'), new Card('♦', '5'), 
+    //   new Card('♦', '6'), new Card('♦', '7'), new Card('♦', '8'), new Card('♦', '9'), new Card('♦', '10'), 
+    //   new Card('♦', 'J'), new Card('♦', 'Q'), new Card('♦', 'K'),
+    // ];
+
+    // let cards = [];
+    // Suits.forEach((suit) => {
+    //   Faces.forEach((face) => {
+    //     cards.push(new Card(suit, face));
+    //   });
+    // });
+    // return cards;
+
+    return Suits.reduce((cards,suit) => {
+      return cards.concat(Faces.map((face) => new Card(suit,face)));
+    }, []);
   }
 
   /**
    * Shuffles the cards in the deck.
    */
   shuffle() {
-    /* code here */
+    if (this.#cards) {
+      this.#cards.forEach((card,index) => {
+        let position = Math.floor(Math.random() * this.#cards.length);
+        if (index !== position) {
+          let cardToSwap = this.#cards[position];
+          this.#cards[position] = card;
+          this.#cards[index] = cardToSwap;
+        }
+      });
+    }
   }
 
   /**
@@ -148,7 +213,7 @@ class Deck {
    * @returns {Card[]} The current cards contained in the deck.
    */
   peek() {
-    /* code here */
+    return (this.#cards || []).map((card) => card);
   }
 
   /**
