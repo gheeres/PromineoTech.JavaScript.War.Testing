@@ -24,6 +24,8 @@ describe('Card', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     //});
 
     // it ('should throw Error if no parameters provided', (done) => {
@@ -32,6 +34,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('should throw Error if suit is not valid', (done) => {
@@ -40,6 +45,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('should throw Error if face is not valid', (done) => {
@@ -48,6 +56,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
   describe('#toString', () => {
@@ -57,6 +68,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
   describe('#getValue', () => {
@@ -66,6 +80,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with ♠Q should return 10', (done) => {
@@ -74,6 +91,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with ♠K should return 10', (done) => {
@@ -82,6 +102,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with ♠10 should return 10', (done) => {
@@ -90,6 +113,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with ♠2 should return 2', (done) => {
@@ -98,6 +124,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with ♠7 should return 7', (done) => {
@@ -106,6 +135,9 @@ describe('Card', () => {
     //   /* Act / Invoke */
     //
     //   /* Assert */
+    //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
 });

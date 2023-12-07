@@ -24,6 +24,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     //});
 
     // it ('with empty constructor should initialize a standard deck', (done) => {
@@ -33,6 +35,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with array of cards, should initialize cards to provided values', (done) => {
@@ -42,6 +46,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
   describe('#shuffle', () => {
@@ -52,6 +58,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with one card should remain unshuffled', (done) => {
@@ -61,6 +69,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('should not remove or alter any existing cards in the deck', (done) => {
@@ -70,6 +80,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with multiple cards should change position of at least one card', (done) => {
@@ -79,6 +91,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
   describe('#draw', () => {
@@ -89,6 +103,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('should return card at the top of the deck', (done) => {
@@ -98,6 +114,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('should remove card from deck', (done) => {
@@ -107,6 +125,8 @@ describe('Deck', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
 });

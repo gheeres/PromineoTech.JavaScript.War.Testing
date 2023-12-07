@@ -24,6 +24,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     //});
 
     // it ('with name sets name property', (done) => {
@@ -33,6 +35,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with cards will initialize hand', (done) => {
@@ -42,6 +46,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
   describe('#flip', () => {
@@ -52,6 +58,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('should return first card from the players hand', (done) => {
@@ -61,6 +69,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('should remove card from players hand', (done) => {
@@ -70,6 +80,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
   describe('#add', () => {
@@ -80,6 +92,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with valid card adds card to hand', (done) => {
@@ -89,6 +103,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with empty hand adds card to hand', (done) => {
@@ -98,6 +114,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
     // it ('with non-Card object/instance doesnt add card to hand', (done) => {
     //   /* Arrange */
@@ -106,6 +124,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
   describe('#drawCardFromDeck', () => {
@@ -116,6 +136,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with non-Deck object/instance returns false', (done) => {
@@ -125,6 +147,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with valid deck and empty hand adds drawn card to players hand', (done) => {
@@ -134,6 +158,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
 
     // it ('with valid deck and existing hand adds drawn card to players hand', (done) => {
@@ -143,6 +169,8 @@ describe('Player', () => {
     //
     //   /* Assert */
     //   assert.fail('Not implemented');
+    //
+    //   done();
     // });
   });
 });
