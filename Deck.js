@@ -17,16 +17,18 @@ const Card = require('./Card').Card;
 
 describe('Deck', () => {
   describe('#constructor', () => {
-    //it ('with empty constructor will create a deck with 52 cards', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    //   assert.fail('Not implemented');
-    //
-    //   done();
-    //});
+    it ('with empty constructor will create a deck with 52 cards', (done) => {
+      /* Arrange */
+      let expectedCards = 52;
+    
+      /* Act / Invoke */
+      let deck = new Deck();
+    
+      /* Assert */
+      expect(deck.peek()).to.have.lengthOf(expectedCards);
+    
+      done();
+    });
 
     // it ('with empty constructor should initialize a standard deck', (done) => {
     //   /* Arrange */
@@ -51,27 +53,31 @@ describe('Deck', () => {
     // });
   });
   describe('#shuffle', () => {
-    // it ('with empty deck should not throw error', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    //   assert.fail('Not implemented');
-    //
-    //   done();
-    // });
+    it ('with empty deck should not throw error', (done) => {
+      /* Arrange */
+      let deck = new Deck([]);
+    
+      /* Act / Invoke */
+      /* Assert */
+      deck.shuffle();
+    
+      done();
+    });
 
-    // it ('with one card should remain unshuffled', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    //   assert.fail('Not implemented');
-    //
-    //   done();
-    // });
+    it ('with one card should remain unshuffled', (done) => {
+      /* Arrange */
+      let expectedCard = new Card('♣', 'J');
+      let deck = new Deck([ expectedCard ]);
+    
+      /* Act / Invoke */
+      deck.shuffle();
+    
+      /* Assert */
+      let firstCardInDeck = deck.peek()[0];
+      expect(firstCardInDeck).to.deep.equal(expectedCard);
+    
+      done();
+    });
 
     // it ('should not remove or alter any existing cards in the deck', (done) => {
     //   /* Arrange */
@@ -83,17 +89,34 @@ describe('Deck', () => {
     //
     //   done();
     // });
+    it ('with multiple cards should change position of at least one card', (done) => {
+      /* Arrange */
+      let expectedCards = [
+        new Card('♠', 'A'), new Card('♠', '2'), new Card('♠', '3'), 
+        new Card('♠', '4'), new Card('♠', '5'), new Card('♣', 'K'),
+        new Card('♣', 'J'), new Card('♣', 'Q'), new Card('♣', '9'), 
+        new Card('♦', '6'), new Card('♦', '7'), new Card('♣', '8'),
+      ];
+      let deck = new Deck(expectedCards);
+    
+      /* Act / Invoke */
+      deck.shuffle();
+    
+      /* Assert */
+      expect(deck.peek()).to.have.lengthOf(expectedCards.length);
+      let changedPosition = false;
+      deck.peek().forEach((card,index) => {
+        if (expectedCards[index].toString() !== card.toString()) {
+           changedPosition = true;
+           return;
+        }
+      });
+      expect(changedPosition).to.be.true;
+    
+      //console.log(deck.toString());
 
-    // it ('with multiple cards should change position of at least one card', (done) => {
-    //   /* Arrange */
-    //
-    //   /* Act / Invoke */
-    //
-    //   /* Assert */
-    //   assert.fail('Not implemented');
-    //
-    //   done();
-    // });
+      done();
+    });
   });
   describe('#draw', () => {
     // it ('with empty deck should return null', (done) => {
@@ -139,13 +162,19 @@ class Deck {
    * The cards contained in the deck.
    */
   // code here, declare private variable. no one should be able to peek at the deck? cheater!
+  #cards = [];
 
   /**
    * Creates a new instance of Desk.
    * @param {Card[]} cards The optional list of cards to initialize the deck with. Leaving this parameter null will automatically create a standard 52 card desk.
    */
   constructor(cards) {
-    /* code here */
+    if (! cards) {
+      this.#cards = this.#create();
+    }
+    else {
+      this.#cards = [...cards];
+    }
   }
 
   /**
@@ -153,14 +182,37 @@ class Deck {
    * @returns {Card[]} The freshly unwrapped deck
    */
   #create() {
-    /* code here */
+    return [
+      new Card('♠', 'A'), new Card('♠', '2'), new Card('♠', '3'), new Card('♠', '4'), new Card('♠', '5'), 
+      new Card('♠', '6'), new Card('♠', '7'), new Card('♠', '8'), new Card('♠', '9'), new Card('♠', '10'), 
+      new Card('♠', 'J'), new Card('♠', 'Q'), new Card('♠', 'K'),
+      new Card('♥', 'A'), new Card('♥', '2'), new Card('♥', '3'), new Card('♥', '4'), new Card('♥', '5'), 
+      new Card('♥', '6'), new Card('♥', '7'), new Card('♥', '8'), new Card('♥', '9'), new Card('♥', '10'), 
+      new Card('♥', 'J'), new Card('♥', 'Q'), new Card('♥', 'K'),
+      new Card('♣', 'A'), new Card('♣', '2'), new Card('♣', '3'), new Card('♣', '4'), new Card('♣', '5'), 
+      new Card('♣', '6'), new Card('♣', '7'), new Card('♣', '8'), new Card('♣', '9'), new Card('♣', '10'), 
+      new Card('♣', 'J'), new Card('♣', 'Q'), new Card('♣', 'K'),
+      new Card('♦', 'A'), new Card('♦', '2'), new Card('♦', '3'), new Card('♦', '4'), new Card('♦', '5'), 
+      new Card('♦', '6'), new Card('♦', '7'), new Card('♦', '8'), new Card('♦', '9'), new Card('♦', '10'), 
+      new Card('♦', 'J'), new Card('♦', 'Q'), new Card('♦', 'K'),
+    ];
   }
 
   /**
    * Shuffles the cards in the deck.
    */
   shuffle() {
-    /* code here */
+    if (this.#cards) {
+      this.#cards.forEach((card,index) => {
+        let position = Math.floor(Math.random() * this.#cards.length);
+        // Swap card position
+        if (position !== index) {
+          let cardToSwap = this.#cards[position]; // Grab a reference to the card we are going to swap
+          this.#cards[position] = card; // Put our card in the spot where the card to be swapped is/was
+          this.#cards[index] = cardToSwap;
+        }
+      });
+    }
   }
 
   /**
@@ -168,7 +220,7 @@ class Deck {
    * @returns {Card[]} The current cards contained in the deck.
    */
   peek() {
-    /* code here */
+    return this.#cards;
   }
 
   /**
@@ -184,7 +236,12 @@ class Deck {
    * @returns {String} The string representation of the object
    */
    toString() {
-    /* code here */
+    //let output = '';
+    //for(let card of this.#cards) {
+    //  output += `,${ card.toString() }`;
+    //}
+    //return output;
+    return this.#cards.join(',');
   }
 }
 
