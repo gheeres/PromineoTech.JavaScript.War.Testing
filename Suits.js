@@ -55,7 +55,7 @@ describe('Suits', () => {
   });
 });
 
-const Suits = [ '♠', '♥', '♣', '♦' ];
+const Suits = [ '♠', '♥', '♣', '♦', ];
 //const Suits = ['\u2666', '\u2665', '\u2666', '\u2663'];
 
 module.exports = Suits;
