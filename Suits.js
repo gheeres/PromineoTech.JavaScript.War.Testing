@@ -1,5 +1,4 @@
-const chai = require("chai");
-const assert = chai.assert;
+let chai = (typeof(window) === 'undefined') ? await import('./node_modules/chai/index.mjs') : window.chai;
 const expect = chai.expect;
 
 describe('Suits', () => {
@@ -58,4 +57,4 @@ describe('Suits', () => {
 const Suits = [ '♠', '♥', '♣', '♦', ];
 //const Suits = ['\u2666', '\u2665', '\u2666', '\u2663'];
 
-module.exports = Suits;
+export default Suits;

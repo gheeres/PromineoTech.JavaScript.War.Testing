@@ -1,8 +1,8 @@
-const chai = require("chai");
-const assert = chai.assert;
+let chai = (typeof(window) === 'undefined') ? await import('./node_modules/chai/index.mjs') : window.chai;
 const expect = chai.expect;
-const Card = require('./Card').Card;
-const Deck = require('./Deck');
+
+import { Card } from './Card.js';
+import Deck from './Deck.js';
 
 // Player {
 //   ctor(name, hand);
@@ -236,4 +236,4 @@ class Player {
   }
 }
 
-module.exports = Player;
+export default Player;

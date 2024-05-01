@@ -1,8 +1,8 @@
-const chai = require("chai");
-const assert = chai.assert;
+let chai = (typeof(window) === 'undefined') ? await import('./node_modules/chai/index.mjs') : window.chai;
 const expect = chai.expect;
-const Suits = require('./Suits');
-const Faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K' ];
+
+import Suits from './Suits.js';
+export const Faces = [ 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K' ];
 
 // Card {
 //   property suit;
@@ -186,7 +186,7 @@ describe('Card', () => {
 /**
  * Represents a standard playing card.
  */
-class Card {
+export class Card {
   /**
    * Creates a new player card.
    * @param {String} suit The suit of the card. Accepted values: '♠', '♥', '♣', '♦'
@@ -233,7 +233,7 @@ class Card {
   }
 }
 
-module.exports = {
+export default {
   Card : Card,
   Faces : Faces
 };
